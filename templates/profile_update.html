@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block head_title %}Update {{user.username}} Profile  {% endblock %}
+{% block content%}
+
+<!---- Begin Page Content --->
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="card shadow mb-4 text-center" style="width: 540px;">
+            <div class="card-header font-weight-bold bg-dfn text-white">
+                Profile Update
+            </div>
+            <div class="card-body text-dft">
+                <form action=""  enctype="multipart/form-data" method="post">
+                    {% csrf_token %}
+                    {{ user_form | crispy }}
+                    {{ profile_form | crispy }}
+                    <input type="submit" class="btn bg-dfn btn-block text-white" value="Submit">
+                </form>
+                <hr>
+                <div class="small">
+                    <a href="{% url 'index'%}" class="mr-2">Home</a>
+                    If Profile already updated<a href="{% url 'step_1' %}"> Apply</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock content %}

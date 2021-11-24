@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags%}
+{% block head_title %}Loan Application{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-3 m-0">
+    <div class="row">
+        <div class="col">
+            <div class="alert alert-success text-center">
+                <p>You've initiated the loan application process.<br>Note: Data provided in the profile will be used in the verification of the loan</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid p-3">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-6 p-3" style="min-width: 450px;">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center font-weight-bold" style="color:#ff5722;">Loan Application</h3>
+                </div>
+                <div class="card-body">
+                    <div class="card-text">
+                        <form action="" method="post" class="">
+                            {% csrf_token %}
+                                <input type="hidden" name="usr" id="" value="{{user.id}}">
+                                <input type="hidden" name="uid" value="{{user.updateprofile.id_number}}">
+                            </span>
+                            <input type="hidden" name="addr" value="{{user.updateprofile.adress}}">
+                            <input type="hidden" name="dob" value="{{user.updateprofile.date_of_birth}}">
+                            <input type="hidden" name="fname" value="{{user.first_name}}">
+                            <input type="hidden" name="phone_no" value="{{user.updateprofile.phone_number}}">
+                            <input type="hidden" name="lname" value="{{user.last_name}}">
+                            <input type="hidden" name="email" value="{{user.email}}">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="repayment_period">Repayment Period:</label> <br>
+                                    <input type="number" name="repayment_period" id="" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="income_level">Income Level:</label> <br>
+                                    <input type="number" name="income_level" requared>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="amount">Amount Applied:</label> <br>
+                                    <input type="number" name="amount" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="guarantor_id">Guarantor Id:</label> <br>
+                                    <input type="number" name="guarantor_id" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="guarantor_name">Guarantor Name:</label> <br>
+                                    <input type="text" name="guarantor_name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="guarantor_email">Guarantor Email:</label> <br>
+                                    <input type="email" name="guarantor_email" id="" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="Guarantor_income_level">Guarantor income level:</label> <br>
+                                    <input type="number" name="guarantor_income_level" id="" required>
+                                </div>
+                                <div class="col-md-6 p-3">
+                                <a href="{% url 'index' %}" class="btn btn-danger m-1">Cancel</a>
+                                <button class="btn btn-default m-1" type="submit">Submit</button>
+                                <button type="reset" class=" btn btn-warning m-1">Reset</button>
+                                </div>
+                            </span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content%}

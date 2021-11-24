@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head_title %}Homepage {% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row bg-white text-center align-items-center p-3 mb-3 shadow">
+        <div class="col-md-5">
+            <img src="{% static '/img/Uwezo Sacco.gif' %}" class="img-thumbnail border-0" alt="">
+        </div>
+        <div class="col-md-7 text-left" style="color: #ff5722;">
+            {% if user.is_authenticated %}
+                <h5 class="text-secondary"><b style="color: #ff5722;">{{user}}</b>, welcome to</h5>
+                <h2><span style="color: white; background-color: #ff562294; font-weight: bold;">UW</span>EZO SACCO</h2>
+                <P  class="text-dark">Uwezo Sacco App is a software that is mainly aimed at helping in the management of the Sacco's records, i.e it will be able to keep track of the loans allocated, time, date and to whom it is allocated and keep track of the payment process.
+                    With this app, accuracy will be increased, there will be no paperwork. The tedious process will be reduced.
+                    <br><a href="https://docs.google.com/presentation/d/135kXXMAd_Y_NaRuSo8U9XpalYgm5cyPjW0I8zL7MAPo/edit?usp=drivesdk" class="btn btn-default mt-3"> View More </a>
+                </P>
+                <span class="d-flex">
+                    <a href="" class="btn btn-outline-primary mr-3 mb-2" data-toggle="modal" data-target="#logoutModal">Apply Now </a>
+                    <form action="{% url 'fetch-loans' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="u_id" value="{{user.id}}">
+                        <button type="submit" class="btn btn-outline-success">Repay</button>
+                    </form>
+                </span>
+            {% else %}
+            <p>Welcome Customer, This Sacco offers financial assistance to members. <br> To enjoy the offers and to get assistance kindly.</p>
+            <a href="{% url 'account_signup' %}" class="btn btn-default m-2">Register</a> <a href="{% url 'account_login' %}" class="btn btn-outline-primary m-2">Login</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

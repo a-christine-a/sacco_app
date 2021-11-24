@@ -1,0 +1,45 @@
+a{
+    text-decoration:  none;
+    color: chocolate;
+}
+ul, li{
+    list-style: none;
+}
+.btn-default{
+    color: chocolate;
+    border: 1px chocolate solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-default:hover{
+    background-color: chocolate;
+    color: white;
+    border-radius: 5px;
+}
+a > .fa1{
+    font-size: 25px;
+    color: chocolate;
+    border: 1px white;
+    padding: 5px;
+    background-color: white;
+}
+a > .fa1:hover{
+    color: white;
+    border: 1px solid white;
+    padding: 5px;
+    background-color: transparent;
+}
+.text{
+    color: chocolate;
+}
+
+.bg-dfn{
+    background-color: #ff5722;
+}
+
+@media screen and(max-width : 540px) {
+    .form{
+        text-align: center;
+        justify-content: center;
+    }
+}

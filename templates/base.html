@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sacco App, a software that helps in managing loans within an organisation, Sacco app enables members of the organisation to apply for loan, Sacco app keep track of all financial report of that organisation">
+  <meta name="keywords" content="Sacco App, Loan App, Financial management system, Apply Loan, Sacco group, Sacco Loan, Sacco Software">
+  <meta name="author" content="Jeff Odhiambo, The Programmer, Sacco Group, Loan Group">
+  <!-- Online links -->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/f23d6cf39d.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="{% static 'img/logo.png'%}" type="image/x-icon">
+  <!-- local links -->
+  <link rel="stylesheet" href="{% static 'vendor/fontawesome-free/css/all.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/scss/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'scss/sb-admin-2.css' %}">
+  <link rel="stylesheet" href="{% static 'css.css' %}">
+
+  <meta name="robots" content="NONE,NOARCHIVE">
+  <title>SACCO - {% block head_title %}{% endblock %}</title>
+    {% block extra_head %}
+    {% endblock %}
+  </head>
+  <body>
+    <div class="container-fluid p-0 m-0" style="background-color: honeydew;">
+      {% block body %}
+        {% include '_navbar.html' %}
+        {% if messages %}
+        <div class="alart alert-success">
+          <strong>Messages:</strong>
+          <ul>
+            {% for message in messages %}
+            <li>{{message}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        {% block content %}
+
+        {% endblock %}
+        {% endblock %}
+        {% block extra_body %}
+
+        {% endblock %}
+        <footer class="sticky-footer text-center text-white" style="background-color: #ff5722;">
+
+            <div class="container-fluid">
+              <div class="row align-items-center justify-content-center">
+                <div class="col-md-3 m-2">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7978.1848851718!2d37.00988707069495!3d-1.09294774681104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f46218ea0e3a5%3A0xed2cf7183d78899!2sTechnology%20House%2C%20JKUAT!5e0!3m2!1sen!2ske!4v1633680970958!5m2!1sen!2ske" width="auto" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="col-md-5 m-2">
+                  <p>Contact Members:</p>
+                  <span>
+                  <a href="tel: +254795067776"class="text-white">Jeff Odhiambo</a>,
+                  <a href="tel: +254769671929"class="text-white">Joyce Supeyo</a>,
+                  <a href="tel: +254717183155"class="text-white">Dennis Wambua</a>,
+                  <a href="tel: +254703980013"class="text-white">Nelly Kinanu</a>,
+                  <a href="tel: +254734595255"class="text-white">Robert Langat</a>,
+                  <a href="tel: +254720751413"class="text-white">Nelly Muoka</a>,
+                  <a href="tel: +254746760227"class="text-white">Victor Omondi</a>,
+                  <a href="tel: +254743942339"class="text-white">Lilian Kimani</a>,
+                  <a href="tel: +254742641232"class="text-white">Mahadi Mohamed</a>.
+                  </span>
+                  <span><a href="sms:+254795067776" class="text-white m-3">Send SMS</a></span>
+                </div>
+                <div class="col-md-3 m-2">
+                  <P>Copyright @ UWEZO SACCO APP 2021</P>
+                  <a href="https://chat.whatsapp.com/IcK9ExehdFNFqMSBsGc21u"><i class="fab fa1 fa-whatsapp" aria-hidden="true"></i></a>
+                  <a href="https://t.me/joinchat/h_vup_oxm_BlMTE0"><i class="fab fa1 fa-telegram" aria-hidden="true"></i></a>
+                  <a href="mailto: group.sacco.app@gmail.com"><i class="fa fa1 fa-envelope" aria-hidden="true"></i></a>
+                  <a href="tel: +254202346703"><i class="fa fa1 fa-phone" aria-hidden="true"></i></a>
+                  <a href="https://goo.gl/maps/utp5hUm1q1hfiUQ2A"><i class="fa fa1 fa-location-arrow" aria-hidden="true"></i></a>
+                  <P>Software Engineering Group</P>
+                </div>
+              </div>
+            </div>
+        </footer>
+    </div>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-light text-dft text-dfn font-weight-bold">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Update Profile?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                  <div class="card-body">
+                    Before applying you are required to update all the fields in the profile with accurate data beacuse they will be used to verify your application. Click on 'Update profile' to Proceed!
+                  </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-default" href="{% url 'update-profile' %}">Update profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static '/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static '/vendor/bootstrap/js/bootstrap.js' %}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'vendor/fontawesome-free/js/all.js' %}"></script>
+
+</body>
+</html>

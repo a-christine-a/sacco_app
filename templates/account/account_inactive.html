@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Account Inactive" %}{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row justify-content-center p-3">
+        <div class="card" style="max-width: 450px;">
+            <div class="card-header">
+                <h3 class="text-center font-weight-bold" style="color:#ff5722;">{% trans "Account Inactive" %}</h3>
+            </div>
+            <div class="card-body">
+                <div class="card-text text-center">
+                    <p>{{user}}, {% trans "This account is inactive." %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags%}
+{% block head_title %}Application step 3 {% endblock %}
+
+{% block content %}
+
+<div class="container-fluid p-3 m-0 bg-white">
+    <div class="row">
+        <div class="col">
+            <div class="alert alert-success text-center">
+                <p>{{user}}, Your application was successfully submitted. Our board will verify and get back to you shorly, Thanks</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content%}

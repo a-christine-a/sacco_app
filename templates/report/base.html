@@ -1,0 +1,95 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sacco App, a software that helps in managing loans within an organisation, Sacco app enables members of the organisation to apply for loan, Sacco app keep track of all financial report of that organisation">
+  <meta name="keywords" content="Sacco App, Loan App, Financial management system, Apply Loan, Sacco group, Sacco Loan, Sacco Software">
+  <meta name="author" content="Jeff Odhiambo, The Programmer, Sacco Group, Loan Group">
+  <!-- Online links -->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/f23d6cf39d.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="{% static 'img/logo.png'%}" type="image/x-icon">
+  <!-- local links -->
+  <link rel="stylesheet" type="text/css" href="{% static 'admin/css/base.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'admin/css/nav_sidebar.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'admin/css/changelists.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'admin/css/responsive.css' %}"> 
+<!-- <link rel="stylesheet" href="{% static 'main.css' %}"> -->
+  <meta name="robots" content="NONE,NOARCHIVE">
+  <style>
+    .row{
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      padding: 15px;
+    }
+    .col{
+      display: block;
+      width: auto;
+      margin: 15px;
+    }
+    .table-scroll{
+      overflow:scroll;
+    }
+    @media screen and (max-width:580px) {
+      .col{
+        display: block;
+        width: 100%;
+        margin: 15px;
+        overflow: scroll;
+        font-size: 12px;
+      } 
+      tr,td,th{
+        width: 100%;
+        font-size: 9px;
+      }
+      .sm{
+        display: none;
+      }
+      .table-scroll{
+        overflow:scroll;
+      }
+    }
+  </style>
+  <title>Sacco - {% block title %} {% endblock title %}</title>
+</head>
+
+<body class=" app-appliction model-loanapplication change-list">
+  <!-- Header -->
+  <div id="header">
+    <div id="branding"> 
+      <h1 id="site-name"><a href="/admin/">Uwezo Sacco Admin Pannel</a></h1>
+    </div>
+    <div id="user-tools">
+      Welcome,
+      <strong>{{user.first_name}}</strong>.
+      <a href="/">View site</a> /      
+      <a href="{% url 'applicants' %}">Disburse or Approve</a> /
+      <a href="{% url 'reports' %}">View Report</a> /
+      <a href="/admin/logout/">Log out</a>
+    </div>   
+  </div>
+<!-- END Header -->
+<div id="container">
+  {% block content %}
+
+
+  {% endblock content %}
+</div>
+    <script src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script>
+    <script src="{% static 'admin/js/jquery.init.js' %}"></script>
+    <script src="{% static 'admin/js/core.js' %}"></script>
+    <script src="{% static 'admin/js/admin/RelatedObjectLookups.js' %}"></script>
+    <script src="{% static 'admin/js/actions.js' %}"></script>
+    <script src="{% static 'admin/js/urlify.js' %}"></script>
+    <script src="{% static 'admin/js/prepopulate.js' %}"></script>
+    <script src="{% static 'admin/js/vendor/xregexp/xregexp.js' %}"></script>
+    <script src="{% static 'admin/js/nav_sidebar.js' %}" defer></script>
+    <script src="{% static 'aproval.js' %}"></script>
+</body>
+</html>

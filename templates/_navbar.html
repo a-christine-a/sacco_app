@@ -1,0 +1,55 @@
+<!-- Navigation -->
+{%load static%}
+
+<nav class="navbar navbar-expand navbar-light bg-light topbar mb-4 static-top shadow">
+
+    <!-- Sidebar Toggle (Topbar) -->
+    <img src="{% static '/img/logo.png' %}" class="btn d-md-none mr-3" alt="logo" height="40px">
+    
+    <!-- Topbar Search -->
+    <div class="d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100">
+        <div class="text">
+            Uwezo Sacco App
+        </div>
+    </div>
+
+    <!-- Nav Item - User Information -->
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="userDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-dft-600 small">Menu </span>
+
+            </a>
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--glow-in"aria-labelledby="userDropdown">
+                {% if user.is_superuser %}
+                <a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a>
+                {% endif %}
+                <a class="dropdown-item" href="{% url 'index' %}">Homepage</a>
+                <a class="dropdown-item" href="https://goo.gl/maps/utp5hUm1q1hfiUQ2A">Location</a>
+                <a class="dropdown-item" href="{% url 'contact' %}">Contact</a>
+                <a class="dropdown-item text-dark" href="{% url 'settings' %}">Explore More</a>
+            </div>
+        </li>
+        {% if user.is_superuser %}
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="userDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-dft-600 small">Admin </span>
+
+            </a>
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--glow-in"aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a>
+                <a class="dropdown-item" href="{% url 'applicants' %}">Approve Loan</a>
+                <a class="dropdown-item" href="{% url 'applicants' %}">Disburse Loan</a>
+                <a class="dropdown-item" href="{% url 'reports' %}">View Reports</a>
+                <a class="dropdown-item text-dark" href="{% url 'admin:index' %}">View Admin Pannel</a>
+            </div>
+        </li>
+        {% endif %}
+    </ul>
+    {% include '_account.html' %}
+</nav>
+<!-- End of Topbar -->

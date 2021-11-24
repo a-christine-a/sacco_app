@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head_title %}Shortcuts {% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="card m-2" style="width: 100%;">
+            <div class="card-header">
+                <h3 class="text-center font-weight-bold" style="color:#ff5722;">Shortcut Page</h3>
+            </div>
+            <div class="card-body">
+                <div class="card-text text-center">
+                    <div class="small">
+                        for {{user}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row p-2 bg-white justify-content-center">
+        <div class="col-md-4 p-2 text-center">
+            <div class="img-card">
+                <img style="max-width: 340px;" src="{% static 'img/Uwezo Sacco.gif' %}" alt="...">
+            </div>
+        </div>
+        <div class="col-md-4 p-2">
+            <div class="card" style="max-width: 400px;">
+                <div class="card-header">
+                    <h4 class="text-center font-weight-bold text-secondary">Shortcuts:</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-text text-center">
+                        <a href="{% url 'index' %}">Home</a> <br>
+                        <a href="{% url 'contact' %}">Contact</a> <br>
+                        <a href="https://chat.whatsapp.com/IcK9ExehdFNFqMSBsGc21u">Main Group</a> <br>
+                        <a href="{% url 'step_1' %}">Apply</a> <br>
+                        <a href="https://goo.gl/maps/utp5hUm1q1hfiUQ2A">Location</a> <br>
+                        <a href="tel: +254202346703">Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 p-2">
+            <div class="card" style="max-width: 400px;">
+                <div class="card-header">
+                    <h4 class="text-center font-weight-bold text-secondary">Accounts:</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-text text-center">
+                        <a href="{% url 'account_change_password' %}">Change Password</a> <br>
+                        <a href="{% url 'account_reset_password' %}">Forgot Password</a> <br>
+                        <a href="{% url 'account_email' %}">Add Email</a> <br>
+                        <a href="{% url 'account_email' %}">Change Email</a> <br>
+                        <a href="{% url 'account_logout' %}">Logout</a> <br>
+                        <a href="{% url 'account_signup' %}">Register</a> <br>
+                        <a href="{% url 'account_login' %}">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

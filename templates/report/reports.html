@@ -1,0 +1,162 @@
+{% extends 'report/base.html' %}
+{% block title %}General Reports{% endblock %}
+{% block content %}
+    <div class="row">
+        {% if app %}
+        <div class="col">
+            <div class="breadcrumbs">
+                Pendind Applications Summary
+            </div>
+            <table>
+                
+                {% include 'report/_table_head.html' %}
+                <tbody class="table-scroll">   
+                    {% for apps in app %}   
+                    <tr><td class="field-first_name pl-2">{{apps.first_name}} {{apps.last_name}}</td><td class="field-address pl-2">{{apps.id_number}}</td><td class="field-income_level pl-2">{{apps.income_level}}</td><td class="field-amount_applied pl-2">{{apps.amount_applied}}</td><td class="field-guarantor_id pl-2">{{apps.guarantor_name}}</td></tr>
+                    {% endfor %}
+                </tbody>
+               
+            </table>
+        </div>
+        {% endif %}
+        {% if approved %}
+        <div class="col">
+            <div class="breadcrumbs">
+                Approved Applications Summary
+            </div>
+            <table>
+                
+                {% include 'report/_table_head.html' %}
+                <tbody class="table-scroll">   
+                    {% for apps in approved %}   
+                    <tr><td class="field-first_name pl-2">{{apps.first_name}} {{apps.last_name}}</td><td class="field-address pl-2">{{apps.id_number}}</td><td class="field-income_level pl-2">{{apps.income_level}}</td><td class="field-amount_applied pl-2">{{apps.amount_applied}}</td><td class="field-guarantor_id pl-2">{{apps.guarantor_name}}</td></tr>
+                    {% endfor %}
+                    {% if disbursed %}
+                    {% for apps in disbursed %}   
+                    <tr><td class="field-first_name pl-2">{{apps.first_name}} {{apps.last_name}}</td><td class="field-address pl-2">{{apps.id_number}}</td><td class="field-income_level pl-2">{{apps.income_level}}</td><td class="field-amount_applied pl-2">{{apps.amount_applied}}</td><td class="field-guarantor_id pl-2">{{apps.guarantor_name}}</td></tr>
+                    {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+        {% if rejected %}
+        <div class="col">
+            <div class="breadcrumbs">
+                Rejected Applications Summary
+            </div>
+            <table>
+                
+                {% include 'report/_table_head.html' %}
+                <tbody class="table-scroll">   
+                    {% for apps in rejected %}   
+                    <tr><td class="field-first_name pl-2">{{apps.first_name}} {{apps.last_name}}</td><td class="field-address pl-2">{{apps.id_number}}</td><td class="field-income_level pl-2">{{apps.income_level}}</td><td class="field-amount_applied pl-2">{{apps.amount_applied}}</td><td class="field-guarantor_id pl-2">{{apps.guarantor_name}}</td></tr>
+                    {% endfor %}
+                </tbody>
+               
+            </table>
+        </div>
+        {% endif %}
+        {% if disbursed %}
+        <div class="col">
+            <div class="breadcrumbs">
+                Disbursed Applications Summary
+            </div>
+            <table>
+                
+                {% include 'report/_table_head.html' %}
+                <tbody class="table-scroll">   
+                    {% for apps in disbursed %}   
+                    <tr><td class="field-first_name pl-2">{{apps.first_name}} {{apps.last_name}}</td><td class="field-address pl-2">{{apps.id_number}}</td><td class="field-income_level pl-2">{{apps.income_level}}</td><td class="field-amount_applied pl-2">{{apps.amount_applied}}</td><td class="field-guarantor_id pl-2">{{apps.guarantor_name}}</td></tr>
+                    {% endfor %}
+                </tbody>
+               
+            </table>
+        </div>
+        {% endif %}
+        {% if closed %}
+        <div class="col">
+            <div class="breadcrumbs">
+                Closed Applications Summary
+            </div>
+            <table>
+                
+                {% include 'report/_table_head.html' %}
+                <tbody class="table-scroll">   
+                    {% for apps in closed %}   
+                    <tr><td class="field-first_name pl-2">{{apps.first_name}} {{apps.last_name}}</td><td class="field-address pl-2">{{apps.id_number}}</td><td class="field-income_level pl-2">{{apps.income_level}}</td><td class="field-amount_applied pl-2">{{apps.amount_applied}}</td><td class="field-guarantor_id pl-2">{{apps.guarantor_name}}</td></tr>
+                    {% endfor %}
+                </tbody>
+               
+            </table>
+        </div>
+        {% endif %}
+    </div>
+    <div id="header" style="text-align: center;">
+        <h1>Disbursment, Intrest, Amount payable, Amount paid and Balance Report</h1>
+    </div>
+        {% if disbursed %}
+        <div class="breadcrumbs"><b>Disbursed Applications:</b></div>
+        <hr>
+        <div class="results" style="justify-content: center; margin: 10px;">
+            <table id="result_list" style="width: 100%;">
+                <thead>
+                <tr>
+                <th scope="col" class="sortable column-loan_id pl-2">
+                <div class="text"><a href="?o=1">Loan ID</a></div>
+                <div class="clear"></div>
+                </th>
+                <th scope="col" class="sortable column-name pl-2">               
+                <div class="text"><a href="?o=2">Full Name</a></div>
+                <div class="clear"></div>
+                </th>
+                <th scope="col" class="sortable column-repayment_period_in_months pl-2">
+                <div class="text"><a href="?o=5">Repayment period in months</a></div>
+                <div class="clear"></div>
+                </th>
+                <th scope="col" class="sortable column-amount_applied pl-2">
+                <div class="text"><a href="?o=7">Amount Applied</a></div>
+                <div class="clear"></div>
+                </th>
+                <th scope="col" class="sortable column-amount_applied pl-2">
+                    <div class="text"><a href="?o=7">Amount Disbursed</a></div>
+                    <div class="clear"></div>
+                </th>
+                <th scope="col" class="sortable column-amount_applied pl-2">
+                    <div class="text"><a href="?o=7">Intrest Earned</a></div>
+                    <div class="clear"></div>
+                </th>
+                <th scope="col" class="sortable column-income_level pl-2">
+                    <div class="text"><a href="?o=6">Total Payable</a></div>
+                    <div class="clear"></div>
+                </th>
+                <th scope="col" class="sortable column-next_of_kin pl-2"> 
+                <div class="text"><a href="?o=8">Balance</a></div>
+                <div class="clear"></div>
+                </th>
+                <th scope="col" class="sortable column-loan_status pl-2"> 
+                    <div class="text"><a href="?o=9">Guarantor</a></div>
+                    <div class="clear"></div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>   
+                {% for apps in disbursed %}   
+                <tr><th class="field-user nowrap pl-2">{{apps.loan_id}}</a></th><td class="field-name pl-2">{{apps.first_name}} {{apps.last_name}}</td><td class="field-address pl-2">{{apps.repayment_period_in_months}}</td><td class="field-phone_number pl-2">{{apps.amount_applied}}</td><td class="field-repayment_period_in_months pl-2">{{apps.amount_applied}}</td><td class="field-income_level pl-2">{{apps.repayment.intrest}}</td><td class="field-amount_applied pl-2">{{apps.repayment.total_payable}}</td><td class="field-guarantor_name pl-2">{{apps.repayment.balance}}</td><td class="field-loan_status pl-2">{{apps.guarantor_name}}</td></tr>
+                {% endfor %}
+            </tbody>
+            </table>
+            <p>{{disbursed_count}} disbursed applications</p>
+            <hr>
+        </div>
+        {% endif %}
+    <hr style="margin-top: 30px;">
+    <p class="text-white">{{pending_count}} pending applications | {{total_approved}} approved applications | {{rejected_count}} rejected applications | {{disbursed_count}} disbursed applications | {{closed_count}} closed applications</p>
+    <hr>
+
+
+    <div id="container">
+        <h5 style="color: white; font-size: 16px; text-align: center;">Copyright Uwezo Sacco Limited 2021 | Reports</h5>
+    </div>
+
+{% endblock content %}

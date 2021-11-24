@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head_title %}{{user}} Profile {% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="card-md-5 shadow mb-4 text-center" style="width: 320px;">
+            <div class="bg-dfn border-0 p-2">
+                <figure>
+                <img src="{{user.updateprofile.profile_pic.url}}" height="120px" style="border-radius: 50%;" width="auto"  alt="{{user.username}}">
+                <figcaption class="font-weight-bold text-white">{{user.username}}</figcaption>
+                </figure>
+            </div>
+            <div class="card-body bg-white">
+                <div class="card-text">
+
+                    {{user.first_name}} {{user.middle_name}} {{user.last_name}} <br>
+                    {{user.email}} <br>
+                    +254{{user.updateprofile.phone_number}} <br>
+                    {{user.updateprofile.id_number}} <br>
+                    {{user.updateprofile.address}} <br>
+                    {{user.updateprofile.date_of_birth}} <br>
+                    {{user.updateprofile.user_type}} <br>
+                    <a href="{% url 'update-profile'%}"><button class="btn btn-sm bg-dfn text-white mt-3 btn-block">Update</button></a>
+                    <hr>
+                    <div class="text-center">
+                        <a class="small" href="{% url 'index'%}">Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
