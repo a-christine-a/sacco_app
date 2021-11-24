@@ -44,6 +44,7 @@ Call : 0795067776;
 Email: group.sacco.app@gmail.com
 Location: Juja
 # Uwezo
-
+visit our site @ https://saccoapp.pythonanywhere.com/
+clone the project @ https://github.com/killall-nano/sacco_app.git
 # Uwezo
 
