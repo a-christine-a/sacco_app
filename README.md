@@ -1,50 +1,39 @@
-# sacco_app
-ABOUT UWEZO SACCO APP
-******************************
-The uwezo sacco app is aimed at helping the small organisations in managing their funds and loans allocated to menbers
-
-******************************
-
+**ABOUT UWEZO SACCO APP**
+---
+The Uwezo Sacco app is aimed at helping the small organizations in managing their funds and loans allocated to members
 This was made by a team of the Sacco group
 
-MEMBERS:
-****************************
-Jeff Odhiambo - Team Leader
-Joyce Supeyo
-Dennis Wambua
-Nelly Kinanu
-Robert Langat
-Nelly Muoka
-Victor Omondi
-Lilian Kimani
-Mahadi Mohamed               
-***************************
+**MEMBERS:**
+---
+1. Jeff Odhiambo - Team Leader
+2. Joyce Supeyo
+3. Dennis Wambua
+4. Nelly Kinanu
+5. Robert Langat
+6. Nelly Muoka
+7. Victor Omondi
+8. Lilian Kimani
+9. Mahadi Mohamed       
 
-Features of the app
-****************************
+**Features of the app**
+----
 Security:
-    Has authentication features enabled,
-    Sign up, sign in, change password, reset password, edit profile
-    Email Confirmation.
+- Has authentication features enabled,
+- Sign up, sign in, change password, reset password, edit profile
+- Email Confirmation.
 
 Others:
-    Apply loan, Repay loan, Get report generated auomatic
-    Updated every transaction as made
-    Has contact center that can be used too reach admin incase of any problem
-    Has additional features such as enabling search, ordering and filtering 
+- Apply loan, Repay loan, Get report generated automatic
+- Updated every transaction as made
+- Has contact center that can be used too reach admin in case of any problem
+- Has additional features such as enabling search, ordering and filtering
+ 
 
-
-
-
-**************************************
 CONTACT
-**************************************
-
+---
 Call : 0795067776;
-Email: group.sacco.app@gmail.com
+Email: odhiambo.jeff1@students.jkuat.ac.ke
 Location: Juja
-# Uwezo
-visit our site @ https://saccoapp.pythonanywhere.com/
-clone the project @ https://github.com/killall-nano/sacco_app.git
-# Uwezo
-
+## Uwezo
+visit our site: https://saccoapp.pythonanywhere.com/
+clone the project: https://github.com/killall-nano/sacco_app.git
